@@ -7,7 +7,7 @@ use std::{
 use css_color::Srgb;
 
 fn main() -> miette::Result<()> {
-    let mut stdin = stdin().lock().lines();
+    let stdin = stdin().lock().lines();
 
     println!("Enter CSS color strings for parsing");
 
