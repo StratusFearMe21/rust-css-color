@@ -58,6 +58,7 @@ pub struct ParseColorError {
         ""
     }))]
     pub span: std::ops::Range<usize>,
+    #[source]
     pub inner_error: ParseColorErrorInner,
     pub expected_none: bool,
 }
