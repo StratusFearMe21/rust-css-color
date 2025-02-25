@@ -65,7 +65,7 @@ pub struct ParseColorError {
 
 #[derive(Debug, Error)]
 pub enum ParseColorErrorInner {
-    #[error("Expected `{expected}`")]
+    #[error("Expected `{}`", *expected as char)]
     UnexpectedByte { expected: u8 },
     #[error("Expected `{}`", String::from_utf8_lossy(expected))]
     UnexpectedName { expected: &'static [u8] },
