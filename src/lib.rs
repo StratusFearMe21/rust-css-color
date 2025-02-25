@@ -48,7 +48,7 @@ impl Srgb {
     }
 }
 
-#[derive(Debug, Error)]
+#[derive(Debug, Error, Clone)]
 #[cfg_attr(feature = "miette", derive(miette::Diagnostic))]
 #[error("CSS color parsing error")]
 pub struct ParseColorError {
@@ -63,7 +63,7 @@ pub struct ParseColorError {
     pub expected_none: bool,
 }
 
-#[derive(Debug, Error)]
+#[derive(Debug, Error, Clone)]
 pub enum ParseColorErrorInner {
     #[error("Expected `{}`", *expected as char)]
     UnexpectedByte { expected: u8 },
